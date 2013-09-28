@@ -3,6 +3,7 @@ module SpreeBrasil
     class InstallGenerator < Rails::Generators::Base
 
       class_option :auto_run_migrations, :type => :boolean, :default => false
+      class_option :auto_run_i18n, :type => :boolean, :default => true
 
       def add_javascripts
         append_file 'app/assets/javascripts/store/all.js', "//= require store/spree_brasil\n"
@@ -16,6 +17,15 @@ module SpreeBrasil
 
       def add_migrations
         run 'bundle exec rake railties:install:migrations FROM=spree_brasil'
+      end
+
+      def run_i18n
+        run_i = options[:auto_run_i18n] || ['', 'y', 'Y'].include?(ask 'Would you like to run the i18n generator? [Y/n]')
+        if run_i
+          run 'rails g spree_i18n:install'
+        else
+          puts 'skipping rails g spree_i18n:install'
+        end
       end
 
       def run_migrations
