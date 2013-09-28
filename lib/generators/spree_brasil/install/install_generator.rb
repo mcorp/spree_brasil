@@ -19,6 +19,11 @@ module SpreeBrasil
         run 'bundle exec rake railties:install:migrations FROM=spree_brasil'
       end
 
+      def add_initializer
+        append_file 'config/initializers/spree.rb', "SpreeI18n::Config.available_locales = [:en, :'pt-BR'] # displayed on translation forms\n" +
+                                                    "SpreeI18n::Config.supported_locales = [:en, :'pt-BR'] # displayed on frontend select box\n"
+      end
+
       def run_i18n
         run_i = options[:auto_run_i18n] || ['', 'y', 'Y'].include?(ask 'Would you like to run the i18n generator? [Y/n]')
         if run_i
