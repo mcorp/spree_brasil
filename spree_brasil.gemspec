@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.description = 'I18n, translations, currency, etc.'
   s.required_ruby_version = '>= 1.9.3'
 
-  # s.author    = 'You'
-  # s.email     = 'you@example.com'
-  # s.homepage  = 'http://www.spreecommerce.com'
+  s.author    = 'Marco Carvalho'
+  s.email     = 'marco.carvalho.swasthya@gmail.com'
+  s.homepage  = 'http://github.com/mcorp/spree_brasil'
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
