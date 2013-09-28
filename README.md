@@ -1,12 +1,12 @@
 SpreeBrasil
 ===========
 
-Introduction goes here.
+Gem to add Brazilian Portuguese as a language for Spree.
 
 Installation
 ------------
 
-Add spree_brasil to your Gemfile:
+Add `spree_brasil` to your Gemfile:
 
 ```ruby
 gem 'spree_i18n',        github: 'spree/spree_i18n',        branch: '2-1-stable'
@@ -39,4 +39,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_brasil/factories'
 ```
 
-Copyright (c) 2013 [name of extension creator], released under the New BSD License
+Copyright (c) 2013 mcorp, released under the MIT License
