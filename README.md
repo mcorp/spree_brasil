@@ -9,6 +9,8 @@ Installation
 Add spree_brasil to your Gemfile:
 
 ```ruby
+gem 'spree_i18n',        github: 'spree/spree_i18n',        branch: '2-1-stable'
+gem 'globalize3',        github: 'svenfuchs/globalize3',    branch: 'rails4'
 gem 'spree_brasil'
 ```
 
