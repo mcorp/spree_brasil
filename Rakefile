@@ -17,4 +17,4 @@ task :test_app do
   Rake::Task['extension:test_app'].invoke
 end
 
-Dir['lib/tasks/*.rake'].each { |f| import File.expand_path(f, File.dirname(__FILE__)) }
+#Dir['lib/tasks/*.rake'].each { |f| import File.expand_path(f, File.dirname(__FILE__)) }
