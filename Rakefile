@@ -4,7 +4,6 @@ Bundler::GemHelper.install_tasks
 require 'rspec/core/rake_task'
 require 'spree/testing_support/extension_rake'
 
-Dir['tasks/*.rake'].each { |f| require f }
 
 RSpec::Core::RakeTask.new
 
@@ -15,3 +14,5 @@ task :test_app do
   ENV['LIB_NAME'] = 'spree_brasil'
   Rake::Task['extension:test_app'].invoke
 end
+
+Dir['lib/tasks/*.rake'].each { |f| import File.expand_path(f, File.dirname(__FILE__)) }
