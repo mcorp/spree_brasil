@@ -2,6 +2,8 @@ require 'bundler'
 Bundler::GemHelper.install_tasks
 
 require 'rspec/core/rake_task'
+require 'rake/packagetask'
+require 'rubygems/package_task'
 require 'spree/testing_support/extension_rake'
 
 
@@ -15,4 +17,4 @@ task :test_app do
   Rake::Task['extension:test_app'].invoke
 end
 
-Dir['lib/tasks/*.rake'].each { |f| import File.expand_path(f, File.dirname(__FILE__)) }
+#Dir['lib/tasks/*.rake'].each { |f| import File.expand_path(f, File.dirname(__FILE__)) }
