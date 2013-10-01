@@ -24,6 +24,10 @@ module SpreeBrasil
                                                     "SpreeI18n::Config.supported_locales = [:en, :'pt-BR'] # displayed on frontend select box\n"
       end
 
+      def add_dbseed
+        append_file 'db/seeds.rb', "\nSpreeBrasil::Engine.load_seed if defined?(SpreeBrasil) \n"
+      end
+
       def run_i18n
         run_i = options[:auto_run_i18n] || ['', 'y', 'Y'].include?(ask 'Would you like to run the i18n generator? [Y/n]')
         if run_i
